@@ -1,0 +1,8 @@
+{
+    "name": "radarnl-observations",
+    "path": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations",
+    "image_path": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations",
+    "json_node_path": "/",
+    "image_node": "layername",
+    "time_node": "nicetime"
+}

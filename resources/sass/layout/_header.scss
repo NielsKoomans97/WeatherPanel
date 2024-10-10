@@ -1,0 +1,67 @@
+@use "../config/variables" as *;
+
+header {
+    position: relative;
+
+    display: grid;
+    align-items: center;
+
+    height: 140px;
+
+    background-color: map-get($map: $colors, $key: banner-color);
+
+    button#menu-button {
+        justify-self: flex-end;
+        align-self: center;
+        
+        margin: auto 20px;
+
+        padding: 15px 25px;
+
+        z-index: 1;
+
+        i {
+            font-size: map-get($map: $typo, $key: menu-button-size);
+        }
+
+        border-radius: 6px;
+
+        &[data-menu="opened"] {
+            background-color: map-get($map: $colors, $key: button-active);
+        }
+
+        &[data-menu="closed"] {
+            background-color: map-get($map: $colors, $key: button-default);
+        }
+    }
+
+    img.banner {
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        object-position: 50% 45%;
+
+        object-fit: none;
+        clip-path: url("#curve");
+    }
+
+    span.banner_toplayer {
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        background-color: map-get($map: $colors, $key: banner-color);
+        // clip-path: url(#toplayer);
+    }
+
+    .header-cutout {
+        position: absolute;
+    }
+
+    .header-cutout #curve {
+        width: 100vw;
+    }
+}

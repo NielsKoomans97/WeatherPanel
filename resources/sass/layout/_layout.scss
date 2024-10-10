@@ -1,0 +1,64 @@
+@use "../static/screen" as *;
+@use '../config/variables' as *;
+
+body {
+    margin: 0 auto;
+    @include screen-xxxl {
+        width: $screen-xxl;
+    }
+
+    @include screen-xxl {
+        width: $screen-xl;
+    }
+
+    @include screen-xl {
+        width: $screen-lg;
+    }
+
+    @include screen-lg {
+        width: $screen-md;
+    }
+
+    @include screen-md {
+        width: $screen-sm;
+    }
+
+    @include screen-sm {
+        width: 100vw;
+    }
+
+    @include screen-xs {
+        width: 100vw;
+    }
+}
+
+*{
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+.content{
+    height: calc(100vh - 140px);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.container{
+    display: flex;
+
+    &.flex{
+        display: flex;
+    }
+
+    &.grid{
+        display: grid;
+    }
+}
+

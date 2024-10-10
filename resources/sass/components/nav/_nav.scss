@@ -1,0 +1,98 @@
+@use "../../config/variables" as *;
+
+nav {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    top: 140px;
+    width: -webkit-fill-available;
+
+    background: map-get($map: $colors, $key: banner-color);
+
+    a {
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 5px 15px;
+
+        font-size: map-get($map: $typo, $key: menu-item-text-size);
+
+        i {
+            margin-right: 15px;
+            font-size: map-get($map: $typo, $key: menu-item-icon-size);
+        }
+    }
+
+    &[data-state="collapsed"] {
+        a {
+            animation: items-hidden 1s;
+            animation-fill-mode: forwards;
+        }
+
+        animation: menu-closed 1s;
+        animation-fill-mode: forwards;
+
+        height: 0;
+    }
+
+    &[data-state="expanded"] {
+        a {
+            animation: items-visible 1s;
+            animation-fill-mode: forwards;
+        }
+
+        animation: menu-open 1s;
+        height: calc(100vh - 140px);
+    }
+
+    @keyframes items-visible {
+        0% {
+            display: none;
+        }
+
+        1% {
+            opacity: 1%;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    @keyframes items-hidden {
+        0% {
+            opacity: 100%;
+        }
+
+        99% {
+            opacity: 1%;
+        }
+
+        100% {
+            display: none;
+        }
+    }
+
+    @keyframes menu-open {
+        from {
+            height: 0;
+        }
+        to {
+            height: calc(100vh - 140px);
+        }
+    }
+
+    @keyframes menu-closed {
+        0% {
+            height: calc(100vh - 140px);
+        }
+        99% {
+            height: 0;
+        }
+        to {
+            display: none;
+        }
+    }
+}
