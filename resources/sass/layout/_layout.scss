@@ -3,6 +3,10 @@
 
 body {
     margin: 0 auto;
+
+    height: 100vh;
+    overflow: hidden;
+
     @include screen-xxxl {
         width: $screen-xxl;
     }

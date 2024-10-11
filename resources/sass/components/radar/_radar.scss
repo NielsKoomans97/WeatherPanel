@@ -1,0 +1,31 @@
+@use '../../config/variables' as *;
+
+div.radar{
+    position: relative;
+
+    img{
+        position: absolute;
+
+        width: -webkit-fill-available;
+    }
+
+    div.frame{
+        position: relative;
+
+        width: -webkit-fill-available;
+
+        &.visible{
+            display: block;
+        }
+
+        &.hidden{
+            display: none;
+        }
+        
+        img{
+            position: absolute;
+
+            width: -webkit-fill-available;
+        }
+    }
+}

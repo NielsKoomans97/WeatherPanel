@@ -1,0 +1,239 @@
+a,
+button,
+input[type=submit] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: unset;
+  border: unset;
+  padding: 10px;
+  transition: 150ms all;
+  color: black;
+  font-size: 1em;
+  text-decoration: none;
+  background-color: #a39ddc;
+  border-bottom: 2px solid transparent;
+}
+a:hover,
+button:hover,
+input[type=submit]:hover {
+  background-color: #9d74cf;
+  border-bottom: 2px solid #8262ae;
+}
+a:active,
+button:active,
+input[type=submit]:active {
+  background-color: #8262ae;
+}
+a:has(i),
+button:has(i),
+input[type=submit]:has(i) {
+  padding: 5px;
+}
+a i,
+button i,
+input[type=submit] i {
+  font-size: 1.2em;
+}
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password],
+textarea {
+  border-radius: 4px;
+  outline: unset;
+  border: 1px solid #9d74cf;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  padding: 5px;
+}
+
+body {
+  margin: 0 auto;
+}
+@media (min-width: 2000px) {
+  body {
+    width: 1400px;
+  }
+}
+@media (min-width: 1400px) and (max-width: 2000px) {
+  body {
+    width: 1200px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  body {
+    width: 992px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  body {
+    width: 768px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    width: 576px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  body {
+    width: 100vw;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    width: 100vw;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}
+
+.content {
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.container {
+  display: flex;
+}
+.container.flex {
+  display: flex;
+}
+.container.grid {
+  display: grid;
+}
+
+header {
+  position: relative;
+  display: grid;
+  align-items: center;
+  height: 140px;
+  background-color: #140025;
+}
+header button#menu-button {
+  justify-self: flex-end;
+  align-self: center;
+  margin: auto 20px;
+  padding: 15px 25px;
+  z-index: 1;
+  border-radius: 6px;
+}
+header button#menu-button i {
+  font-size: 1.4em;
+}
+header button#menu-button[data-menu=opened] {
+  background-color: #8262ae;
+}
+header button#menu-button[data-menu=closed] {
+  background-color: #a39ddc;
+}
+header img.banner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-position: 50% 45%;
+  object-fit: none;
+  clip-path: url("#curve");
+}
+header span.banner_toplayer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #140025;
+}
+header .header-cutout {
+  position: absolute;
+}
+header .header-cutout #curve {
+  width: 100vw;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  top: 140px;
+  width: -webkit-fill-available;
+  background: #140025;
+}
+nav a {
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 15px;
+  font-size: 1.4em;
+}
+nav a i {
+  margin-right: 15px;
+  font-size: 1.6em;
+}
+nav[data-state=collapsed] {
+  animation: menu-closed 1s;
+  animation-fill-mode: forwards;
+  height: 0;
+}
+nav[data-state=collapsed] a {
+  animation: items-hidden 1s;
+  animation-fill-mode: forwards;
+}
+nav[data-state=expanded] {
+  animation: menu-open 1s;
+  height: calc(100vh - 140px);
+}
+nav[data-state=expanded] a {
+  animation: items-visible 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes items-visible {
+  0% {
+    display: none;
+  }
+  1% {
+    opacity: 1%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes items-hidden {
+  0% {
+    opacity: 100%;
+  }
+  99% {
+    opacity: 1%;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes menu-open {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(100vh - 140px);
+  }
+}
+@keyframes menu-closed {
+  0% {
+    height: calc(100vh - 140px);
+  }
+  99% {
+    height: 0;
+  }
+  to {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
