@@ -5,16 +5,15 @@ namespace App\View\Components\radar;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use League\CommonMark\Util\HtmlElement;
 
-class frame extends Component
+class controls extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public array $frameSet,
-        public string $icon,
-        public string $brand,
+        public array $frames
     )
     {
         //
@@ -25,6 +24,6 @@ class frame extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.radar.frame');
+        return view('components.radar.controls');
     }
 }

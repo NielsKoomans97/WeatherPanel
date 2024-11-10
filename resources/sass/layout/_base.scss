@@ -14,7 +14,7 @@ input[type="submit"] {
     border: unset;
 
     padding: 10px;
-    transition: 150ms all;
+    transition: 200ms all;
 
     color: black;
     font-size: 1em;
@@ -39,10 +39,6 @@ input[type="submit"] {
 
     i {
         font-size: 1.2em;
-    }
-
-    &.white{
-        
     }
 }
 

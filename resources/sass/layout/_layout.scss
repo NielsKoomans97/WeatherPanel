@@ -1,5 +1,5 @@
 @use "../static/screen" as *;
-@use '../config/variables' as *;
+@use "../config/variables" as *;
 
 body {
     margin: 0 auto;
@@ -36,16 +36,16 @@ body {
     }
 }
 
-*{
+* {
     box-sizing: border-box;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1em;
 }
 
-.content{
+.content {
     height: calc(100vh - 140px);
-    
+
     display: flex;
     flex-direction: column;
 }
@@ -54,15 +54,26 @@ section {
     padding: 40px 0;
 }
 
-.container{
+.container {
     display: flex;
 
-    &.flex{
+    &.flex {
         display: flex;
     }
 
-    &.grid{
+    &.grid {
         display: grid;
     }
 }
 
+.row {
+    display: flex;
+
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+
+    flex-direction: column;
+}

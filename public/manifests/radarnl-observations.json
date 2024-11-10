@@ -1,5 +1,8 @@
 {
     "name": "radarnl-observations",
+    "prettyname": "Afgelopen uur",
+    "icon": "/assets/logos/weerplaza.png",
+    "brand": "Weerplaza",
     "path": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations",
     "image_path": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations",
     "extra_layers": {

@@ -1,31 +1,155 @@
-@use '../../config/variables' as *;
+@use "../../config/variables" as *;
 
-div.radar{
+div.radar {
     position: relative;
 
-    img{
+    display: flex;
+    justify-content: center;
+
+    img {
         position: absolute;
 
         width: -webkit-fill-available;
+
+        &[data-index="0"] {
+            position: unset;
+        }
     }
 
-    div.frame{
-        position: relative;
+    div.frame {
+        position: absolute;
 
         width: -webkit-fill-available;
 
-        &.visible{
+        display: grid;
+
+        &.visible {
             display: block;
         }
 
-        &.hidden{
+        &.hidden {
             display: none;
         }
-        
-        img{
+
+        img {
             position: absolute;
 
             width: -webkit-fill-available;
+        }
+
+        span.frame-time {
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+            margin-left: 20px;
+
+            width: 80px;
+            height: 35px;
+
+            padding: 5px 10px;
+            background-color: map-get($map: $colors, $key: body-default);
+
+            border-radius: 6px;
+
+            font-size: map-get($map: $typo, $key: radar-time-size);
+            font-weight: 500;
+
+            color: map-get($map: $colors, $key: banner-color);
+        }
+
+        div.logo-container{
+            position: absolute;
+            display: flex;
+            
+            gap: 10px;
+
+            justify-self: flex-end;
+            align-items: center;
+            
+            padding: 10px;
+            margin-top: 20px;
+            margin-right: 20px;
+
+            background-color: map-get($map: $colors, $key: body-default);
+
+            border-radius: 6px;
+            height: 35px;
+
+            img.brand-icon{
+                position: unset;
+                height: -webkit-fill-available;
+                width: auto;
+
+            }
+        }    
+    }
+
+  
+    div.radar-controls {
+        position: absolute;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 90vw;
+        height: 40px;
+        align-self: flex-end;
+
+        margin-bottom: 20px;
+        background-color: transparentize(map-get($map: $colors, $key: body-default), 0.2);
+        border-radius: 6px;
+
+        transition: 150ms all;
+
+        button {
+            padding: 5px 10px;
+            height: -webkit-fill-available;
+
+            &:hover {
+                color: map-get($map: $colors, $key: body-default);
+            }
+        }
+
+        button:not(:hover) {
+            background-color: map-get($map: $colors, $key: body-default);
+        }
+
+        button:first-child {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        button:last-child {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: map-get($map: $colors, $key: button-default);
+
+            width: -webkit-fill-available;
+            height: 4px;
+            border-radius: 6px;
+
+            margin: 0 15px;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px;
+                height: 15px;
+                background: map-get($map: $colors, $key: button-active);
+                // border: 1px solid map-get($map: $colors, $key: button-active);
+                border-radius: 2px;
+                cursor: pointer;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@
     <script src="js/app.js" type="module" defer></script>
     <link rel="stylesheet" href="/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/app.css">
+
     
     @vite('resources\sass\_app.scss')
 </head>

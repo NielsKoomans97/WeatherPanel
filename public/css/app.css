@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 a,
 button,
 input[type=submit] {
@@ -8,7 +9,7 @@ input[type=submit] {
   outline: unset;
   border: unset;
   padding: 10px;
-  transition: 150ms all;
+  transition: 200ms all;
   color: black;
   font-size: 1em;
   text-decoration: none;
@@ -36,6 +37,7 @@ button i,
 input[type=submit] i {
   font-size: 1.2em;
 }
+
 input[type=text],
 input[type=number],
 input[type=email],
@@ -51,6 +53,8 @@ textarea {
 
 body {
   margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
 }
 @media (min-width: 2000px) {
   body {
@@ -90,7 +94,7 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1em;
 }
 
@@ -118,19 +122,19 @@ header {
   position: relative;
   display: grid;
   align-items: center;
-  height: 140px;
+  height: 80px;
   background-color: #140025;
 }
 header button#menu-button {
   justify-self: flex-end;
   align-self: center;
   margin: auto 20px;
-  padding: 15px 25px;
+  padding: 10px 15px;
   z-index: 1;
   border-radius: 6px;
 }
 header button#menu-button i {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 header button#menu-button[data-menu=opened] {
   background-color: #8262ae;
@@ -161,9 +165,10 @@ header .header-cutout #curve {
 
 nav {
   position: absolute;
+  z-index: 999;
   display: flex;
   flex-direction: column-reverse;
-  top: 140px;
+  top: 80px;
   width: -webkit-fill-available;
   background: #140025;
 }
@@ -188,7 +193,7 @@ nav[data-state=collapsed] a {
 }
 nav[data-state=expanded] {
   animation: menu-open 1s;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 80px);
 }
 nav[data-state=expanded] a {
   animation: items-visible 1s;
@@ -221,12 +226,12 @@ nav[data-state=expanded] a {
     height: 0;
   }
   to {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 80px);
   }
 }
 @keyframes menu-closed {
   0% {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 80px);
   }
   99% {
     height: 0;
@@ -234,6 +239,117 @@ nav[data-state=expanded] a {
   to {
     display: none;
   }
+}
+
+div.radar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+div.radar img {
+  position: absolute;
+  width: -webkit-fill-available;
+}
+div.radar img[data-index="0"] {
+  position: unset;
+}
+div.radar div.frame {
+  position: absolute;
+  width: -webkit-fill-available;
+  display: grid;
+}
+div.radar div.frame.visible {
+  display: block;
+}
+div.radar div.frame.hidden {
+  display: none;
+}
+div.radar div.frame img {
+  position: absolute;
+  width: -webkit-fill-available;
+}
+div.radar div.frame span.frame-time {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 80px;
+  height: 35px;
+  padding: 5px 10px;
+  background-color: #f6f5f3;
+  border-radius: 6px;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #140025;
+}
+div.radar div.frame div.logo-container {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  justify-self: flex-end;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: #f6f5f3;
+  border-radius: 6px;
+  height: 35px;
+}
+div.radar div.frame div.logo-container img.brand-icon {
+  position: unset;
+  height: -webkit-fill-available;
+  width: auto;
+}
+div.radar div.radar-controls {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  height: 40px;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  background-color: rgba(246, 245, 243, 0.8);
+  border-radius: 6px;
+  transition: 150ms all;
+}
+div.radar div.radar-controls button {
+  padding: 5px 10px;
+  height: -webkit-fill-available;
+}
+div.radar div.radar-controls button:hover {
+  color: #f6f5f3;
+}
+div.radar div.radar-controls button:not(:hover) {
+  background-color: #f6f5f3;
+}
+div.radar div.radar-controls button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+div.radar div.radar-controls button:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+div.radar div.radar-controls input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #a39ddc;
+  width: -webkit-fill-available;
+  height: 4px;
+  border-radius: 6px;
+  margin: 0 15px;
+}
+div.radar div.radar-controls input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 15px;
+  background: #8262ae;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=app.css.map */

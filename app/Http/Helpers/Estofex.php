@@ -20,7 +20,7 @@ class Estofex
 
         if ($onlyValid) {
             $url = 'https://www.estofex.org/cgi-bin/polygon/showforecast.cgi?listvalid=yes';
-        }
+        } 
 
         $estofex = file_get_contents($url);
         $forecasts = [];

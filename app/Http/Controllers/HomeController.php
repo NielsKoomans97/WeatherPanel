@@ -14,9 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $documentTitle = 'WeatherPanel - All weather information in once place';
-        $warnings = Estofex::GetWarnings(true);
+        // $warnings = Estofex::GetWarnings(true);
 
-        return view('index', compact('documentTitle', 'warnings'));
+        return view('index', compact('documentTitle'));
     }
 
     /**

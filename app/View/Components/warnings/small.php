@@ -1,21 +1,17 @@
 <?php
 
-namespace App\View\Components\radar;
+namespace App\View\Components\warnings;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class frame extends Component
+class small extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public array $frameSet,
-        public string $icon,
-        public string $brand,
-    )
+    public function __construct()
     {
         //
     }
@@ -25,6 +21,6 @@ class frame extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.radar.frame');
+        return view('components.warnings.small');
     }
 }

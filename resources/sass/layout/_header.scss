@@ -6,7 +6,7 @@ header {
     display: grid;
     align-items: center;
 
-    height: 140px;
+    height: 80px;
 
     background-color: map-get($map: $colors, $key: banner-color);
 
@@ -16,7 +16,7 @@ header {
         
         margin: auto 20px;
 
-        padding: 15px 25px;
+        padding: 10px 15px;
 
         z-index: 1;
 
