@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\WarningController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 /*
@@ -17,3 +18,4 @@ use App\Http\Controllers\HomeController;
 
 route::resource('/', HomeController::class);
 route::resource('/charts', ChartController::class);
+route::resource('warnings', WarningController::class);

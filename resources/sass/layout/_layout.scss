@@ -70,6 +70,10 @@ section {
     display: flex;
 
     flex-direction: row;
+
+    &.uneven{
+        background-color: map-get($map: $colors, $key: button-active);
+    }
 }
 
 .column {
