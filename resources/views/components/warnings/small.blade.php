@@ -1,9 +1,19 @@
-<div class="warning-widget small">
-    @php
-        use App\Http\Helpers\Weather;
+   @php
+       use App\Http\Helpers\Weather;
 
-        $locations = Weather::getBuienradarWarnings();
-    @endphp
+       $locations = Weather::getBuienradarWarnings();
+       $code = Weather::getBuienradarWarningCode();
+   @endphp
 
-    <span class="alert-amount">{{ count($locations) }} provincies</span>
-</div>
+   <a href="{{ route('warnings.index') }}">
+       <div class="warning-widget small {{ $code }}">
+           <x-icon iconCode="exclamation-diamond-fill" />
+           <span class="alert-amount">
+               @if (count($locations) > 0)
+                   {{ count($locations) }} provincies
+               @else
+                   Geen waarschuwingen
+               @endif
+           </span>
+       </div>
+   </a>

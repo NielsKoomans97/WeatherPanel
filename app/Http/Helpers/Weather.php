@@ -23,6 +23,12 @@ class Weather
         return $activeWarnings;
     }
 
+    public static function getBuienradarWarningCode(): string
+    {
+        $json = json_decode(file_get_contents('https://data.buienradar.nl/1.0/announcements/apps'));
+        return $json->warnings->color;
+    }
+
     public static function getBuienradarObservations(int $id): stdClass
     {
         $json = json_decode(file_get_contents(`https://observations.buienradar.nl/1.0/actual/weatherstation/{$id}`));

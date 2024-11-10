@@ -4,7 +4,11 @@ $colors: (
     "button-default": #a39ddc,
     "button-hover": #9d74cf,
     "button-active": #8262ae,
-    "icon-color": #0f1110
+    "icon-color": #0f1110,
+    "warning-green": #029b0a,
+    "warning-yellow": #c0ce00,
+    "warning-orange": #d49100,
+    "warning-red": #680000,
 );
 
 $typo: (
@@ -13,4 +17,6 @@ $typo: (
     "menu-item-icon-size": 1.6em,
     "menu-item-text-size": 1.4em,
     "radar-time-size": 1.2em,
+    "warning-icon-size": 1.4em,
+    "warning-code-text": 0.8em,
 );
